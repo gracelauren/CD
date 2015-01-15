@@ -1,0 +1,38 @@
+<h1>CDs Organizer</h1>
+
+<p>Here are all the CDs I own:</p>
+
+    <dl>
+      <% @all_cds.each() do |cd| %>
+        <dl><%= cd.artist() %></dt>
+          <dd>-<%= cd.album() %></dd>
+      <% end %>
+    </dl>
+
+
+<p>Name a CD you have:</p>
+
+  <form action ="/results" method="post">
+  <label for="artist">Artist</label>
+  <input id="artist" name="artist" type="text">
+
+  <label for="album">Album</label>
+  <input id="album" name="album" type="text">
+
+  <button type="submit">Add CD!</button>
+</form>
+
+  <form action ="/clear" method="post">
+  <button type="submit">Clear CD Organizer</button>
+  </form>
+  <br>
+  <Br>
+    <p>Search for a CD by Album or Artist</p>
+
+    <form action ="/search_results" method="post">
+    <label for="search">Artist or Album</label>
+    <input id="search" name="search" type="text">
+
+    <button type="submit" href="/search_results">Search CDs!</button>
+  </form>
+<br>
