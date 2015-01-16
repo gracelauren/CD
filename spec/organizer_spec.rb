@@ -60,7 +60,7 @@ describe(Organizer) do
     test_organizer.save()
     test_organizer2 = Organizer.new("Nicolas Jaar", "Essential Mix")
     test_organizer2.save()
-      expect(Organizer.all_cds_artist("Nicolas Jaar")).to(eq(["Space Is Only Noise", "Essential Mix"]))
+      expect(Organizer.all_cds_artist("Nicolas Jaar")).to(eq("Space Is Only Noise, Essential Mix"))
     end
   end
 end

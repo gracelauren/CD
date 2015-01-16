@@ -41,6 +41,6 @@ class Organizer
         return_array.push(cd.album())
       end
     end
-    return_array
+    return_array.join(", ")
   end
 end

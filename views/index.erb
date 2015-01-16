@@ -1,13 +1,15 @@
 <h1>CDs Organizer</h1>
 
+
 <p>Here are all the CDs I own:</p>
 
     <dl>
       <% @all_cds.each() do |cd| %>
-        <dl><%= cd.artist() %></dt>
+        <dt><%= cd.artist() %></dt>
           <dd>-<%= cd.album() %></dd>
       <% end %>
     </dl>
+
 
 
 <p>Name a CD you have:</p>
@@ -19,11 +21,11 @@
   <label for="album">Album</label>
   <input id="album" name="album" type="text">
 
-  <button type="submit">Add CD!</button>
+  <button class="button-gen" type="submit">Add CD!</button>
 </form>
-
+<br>
   <form action ="/clear" method="post">
-  <button type="submit">Clear CD Organizer</button>
+  <button class="button-gen" type="submit">Clear CDs</button>
   </form>
   <br>
   <Br>
@@ -33,6 +35,16 @@
     <label for="search">Artist or Album</label>
     <input id="search" name="search" type="text">
 
-    <button type="submit" href="/search_results">Search CDs!</button>
+    <button class="button-gen" type="submit" href="/search_results">Search CDs!</button>
   </form>
 <br>
+
+<Br>
+  <p>Search for all albums present in your collection by one artist entered:</p>
+
+  <form action ="/search_artist" method="post">
+  <label for="search_artist">Artist</label>
+  <input id="search_artist" name="search_artist" type="text">
+
+  <button class="button-gen" type="submit" href="/search_artist">Search CDs!</button>
+</form>

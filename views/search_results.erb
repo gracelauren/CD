@@ -1,8 +1,9 @@
-<p> Here are the CDs you searched for:</p>
+
+<p class="results"> Here are the CDs you searched for:</p>
 <br>
 <br>
 <% if @results == nil %>
   The CD you entered was not present.
 <% else %>
   <%= @results.artist() %>, <%= @results.album() %>
-<% end %>  
+<% end %>

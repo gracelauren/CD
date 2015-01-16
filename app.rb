@@ -28,7 +28,8 @@ post('/search_results') do
   erb(:search_results)
 end
 
-post('/all_cds_artist') do
-  Organizer.all_cds_artist()
-  redirect '/'
+post('/search_artist') do
+  @search_artist = params.fetch("search_artist")
+  @results2 = Organizer.all_cds_artist(@search_artist)
+  erb(:search_artist)
 end
